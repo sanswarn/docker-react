@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t sanswarn/docker-react -f Dockerfile.dev 
+
+script:
+  - doecker run sanswarn/docker-react npm run test -- -- coverage
